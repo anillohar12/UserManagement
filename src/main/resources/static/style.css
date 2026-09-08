@@ -1,0 +1,859 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #030a2c;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: -300px;
+    left: -200px;
+
+    background: radial-gradient(
+            circle,
+            rgba(62, 25, 255, 0.35),
+            transparent 65%
+    );
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    right: -300px;
+    bottom: -300px;
+
+    background: radial-gradient(
+            circle,
+            rgba(0, 204, 255, 0.25),
+            transparent 65%
+    );
+}
+
+/* Floating circles */
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+
+    background: radial-gradient(
+            circle at 30% 30%,
+            #613cff,
+            #14008a
+    );
+
+    opacity: 0.5;
+
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle1 {
+    width: 45px;
+    height: 45px;
+    top: 20%;
+    left: 33%;
+}
+
+.circle2 {
+    width: 25px;
+    height: 25px;
+    top: 30%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.circle3 {
+    width: 65px;
+    height: 65px;
+    bottom: 15%;
+    left: 48%;
+    animation-delay: 3s;
+}
+
+.circle4 {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    right: 35%;
+    animation-delay: 1s;
+}
+
+.circle5 {
+    width: 50px;
+    height: 50px;
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-35px) translateX(20px);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    border-bottom: 1px solid rgba(100, 120, 255, 0.2);
+
+    background: rgba(2, 8, 40, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.logo strong {
+    color: #7055ff;
+}
+
+.logo-icon {
+    font-size: 35px;
+
+    filter:
+            drop-shadow(0 0 10px #613cff)
+            drop-shadow(0 0 20px #008cff);
+}
+
+/* Navigation */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav a {
+    color: #9da9d8;
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+
+    text-shadow:
+            0 0 10px #00c6ff;
+}
+
+nav a.active {
+    color: #00c6ff;
+}
+
+.login-btn {
+    padding: 13px 30px;
+
+    border-radius: 30px;
+
+    border: 1px solid #633dff;
+
+    background: linear-gradient(
+            90deg,
+            rgba(119, 34, 255, 0.6),
+            rgba(0, 174, 255, 0.35)
+    );
+
+    color: white !important;
+
+    box-shadow:
+            0 0 20px rgba(90, 50, 255, 0.3);
+
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 0 30px rgba(80, 70, 255, 0.7);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1400px;
+
+    min-height: calc(100vh - 90px);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 70px 0;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    animation: slideLeft 1s ease;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.small-title {
+    color: #00c6ff;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 6vw, 85px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+            90deg,
+            #a100ff,
+            #00c6ff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.description {
+    color: #9ca9d8;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: flex;
+
+    gap: 45px;
+
+    margin-top: 55px;
+}
+
+.feature {
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 155, 255, 0.4);
+
+    background: rgba(0, 95, 255, 0.12);
+
+    font-size: 30px;
+
+    color: #00c6ff;
+
+    box-shadow:
+            0 0 20px rgba(0, 120, 255, 0.2);
+
+    margin-bottom: 12px;
+
+    transition: 0.4s;
+}
+
+.feature:hover .feature-icon {
+    box-shadow:
+            0 0 30px #006eff;
+
+    border-color: #00c6ff;
+
+    transform: scale(1.1);
+}
+
+.feature p {
+    color: #b4c0e8;
+
+    font-size: 14px;
+}
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    margin-top: 50px;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #914dff;
+
+    letter-spacing: 2px;
+}
+
+.tagline span {
+    color: #00c6ff;
+
+    margin: 0 12px;
+}
+
+/* =========================
+   REGISTER CARD
+========================= */
+
+.register-card {
+    padding: 40px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+            145deg,
+            rgba(22, 48, 120, 0.55),
+            rgba(8, 20, 65, 0.6)
+    );
+
+    border: 1px solid rgba(80, 130, 255, 0.35);
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.35),
+            inset 0 0 50px rgba(50, 80, 255, 0.05);
+
+    animation: slideRight 1s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.register-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    background: #4c22ff;
+
+    filter: blur(150px);
+
+    opacity: 0.15;
+
+    top: -100px;
+    right: -100px;
+
+    pointer-events: none;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.user-icon {
+    font-size: 38px;
+
+    color: #8e4dff;
+
+    filter:
+            drop-shadow(0 0 10px #7c32ff);
+}
+
+.card-header h2 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    color: #a7b3dd;
+
+    font-size: 14px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.input-box {
+    display: flex;
+
+    align-items: center;
+
+    height: 56px;
+
+    margin-bottom: 16px;
+
+    padding: 0 18px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(80, 130, 255, 0.4);
+
+    background: rgba(10, 30, 90, 0.35);
+
+    transition: 0.3s;
+}
+
+.input-box span {
+    width: 35px;
+
+    font-size: 20px;
+
+    color: #914dff;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+.input-box input::placeholder {
+    color: #9aa8d4;
+}
+
+.input-box select {
+    cursor: pointer;
+}
+
+.input-box select option {
+    background: #07143f;
+
+    color: white;
+}
+
+.input-box:focus-within {
+    border-color: #00c6ff;
+
+    box-shadow:
+            0 0 20px rgba(0, 198, 255, 0.18);
+
+    transform: translateY(-2px);
+}
+
+/* Date input */
+
+input[type="date"] {
+    color-scheme: dark;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.register-button {
+    width: 100%;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+            90deg,
+            #8b19ff,
+            #1c9cff,
+            #00d5ff
+    );
+
+    background-size: 200% auto;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 10px 30px rgba(43, 100, 255, 0.35);
+
+    transition: 0.4s;
+
+    animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+.register-button:hover {
+    transform: translateY(-4px) scale(1.01);
+
+    box-shadow:
+            0 15px 40px rgba(0, 183, 255, 0.5);
+}
+
+.register-button:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    min-height: 20px;
+}
+
+/* =========================
+   LOGIN TEXT
+========================= */
+
+.login-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #8997c4;
+
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #00c6ff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.login-text a:hover {
+    text-shadow:
+            0 0 10px #00c6ff;
+}
+
+/* =========================
+   WAVES
+========================= */
+
+.waves {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 160px;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+
+    bottom: -100px;
+
+    width: 120%;
+
+    height: 220px;
+
+    border-radius: 50% 50% 0 0;
+
+    transform: rotate(-3deg);
+
+    animation: waveMove 7s ease-in-out infinite;
+}
+
+.wave1 {
+    background: rgba(42, 0, 255, 0.45);
+
+    left: -10%;
+}
+
+.wave2 {
+    background: rgba(0, 103, 255, 0.45);
+
+    left: 15%;
+
+    bottom: -130px;
+
+    animation-delay: 1s;
+}
+
+.wave3 {
+    background: rgba(116, 0, 255, 0.3);
+
+    left: -25%;
+
+    bottom: -150px;
+
+    animation-delay: 2s;
+}
+
+@keyframes waveMove {
+    0%,
+    100% {
+        transform: translateX(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateX(-40px) rotate(2deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 50px 0;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .features {
+        justify-content: center;
+    }
+
+    .tagline {
+        text-align: center;
+    }
+
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    header {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .features {
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .register-card {
+        padding: 25px;
+    }
+
+    .card-header h2 {
+        font-size: 24px;
+    }
+    .register-button {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ripple {
+        position: absolute;
+
+        width: 10px;
+        height: 10px;
+
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.6);
+
+        transform: translate(-50%, -50%);
+
+        animation: rippleEffect 0.6s linear;
+
+        pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+
+        from {
+            width: 10px;
+            height: 10px;
+            opacity: 0.8;
+        }
+
+        to {
+            width: 500px;
+            height: 500px;
+            opacity: 0;
+        }
+    }
+
+    .register-button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Management System</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Animated Background -->
+<div class="background">
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+</div>
+
+<!-- Header -->
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">👥</div>
+        <span>User <strong>Management</strong></span>
+    </div>
+
+    <nav>
+        <a href="#" class="active">⌂ Home</a>
+        <a href="#users">♧ Users</a>
+        <a href="#about">ⓘ About</a>
+        <a href="#login" class="login-btn">♙ Login</a>
+    </nav>
+
+</header>
+
+
+<!-- Main Section -->
+<main>
+
+    <!-- Left Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">WELCOME TO</p>
+
+            <h1>
+                User<br>
+                Management<br>
+                <span>System</span>
+            </h1>
+
+            <p class="description">
+                Manage your users with ease.<br>
+                Add, view, update and delete users
+                securely and efficiently.
+            </p>
+
+        </div>
+
+
+        <!-- Feature Icons -->
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <p>Register<br>Users</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">◉</div>
+                <p>View<br>Users</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✎</div>
+                <p>Update<br>Users</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">♜</div>
+                <p>Delete<br>Users</p>
+            </div>
+
+        </div>
+
+
+        <div class="tagline">
+            Simple <span>•</span> Secure <span>•</span> Fast
+        </div>
+
+    </section>
+
+
+    <!-- Register Form -->
+    <section class="register-card">
+
+        <div class="card-header">
+
+            <div class="user-icon">
+                👤+
+            </div>
+
+            <div>
+                <h2>Register User</h2>
+                <p>Fill in the details below to register a new user.</p>
+            </div>
+
+        </div>
+
+
+        <form id="registerForm">
+
+            <!-- Full Name -->
+            <div class="input-box">
+
+                <span>♙</span>
+
+                <input
+                        type="text"
+                        id="fullname"
+                        placeholder="Full Name"
+                        required>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="input-box">
+
+                <span>✉</span>
+
+                <input
+                        type="email"
+                        id="email"
+                        placeholder="Email"
+                        required>
+
+            </div>
+
+
+            <!-- Mobile -->
+            <div class="input-box">
+
+                <span>☎</span>
+
+                <input
+                        type="number"
+                        id="mobile"
+                        placeholder="Mobile Number"
+                        required>
+
+            </div>
+
+
+            <!-- Gender -->
+            <div class="input-box">
+
+                <span>♧</span>
+
+                <select id="gender" required>
+
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DOB -->
+            <div class="input-box">
+
+                <span>▣</span>
+
+                <input
+                        type="date"
+                        id="dob"
+                        required>
+
+            </div>
+
+
+            <!-- SSN -->
+            <div class="input-box">
+
+                <span>♢</span>
+
+                <input
+                        type="number"
+                        id="ssn"
+                        placeholder="SSN"
+                        required>
+
+            </div>
+
+
+            <!-- Register Button -->
+            <button type="submit" class="register-button">
+
+                <span>➤</span>
+
+                Register
+
+            </button>
+
+
+            <!-- Message -->
+            <div id="message"></div>
+
+
+            <p class="login-text">
+                Already have an account?
+                <a href="#login">Login</a>
+            </p>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<!-- Bottom Waves -->
+<div class="waves">
+
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+
+</div>
+
+
+<script src="/registerUser.js"></script>
+
+</body>
+</html>

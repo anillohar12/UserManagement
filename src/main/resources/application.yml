@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: UserManagement
+
+  datasource:
+    url: jdbc:oracle:thin:@//127.0.0.1:1522/orcl4pdb1
+    username: ANILLOHAR
+    password: Anil@123
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: YOUR_GMAIL@gmail.com
+    password: YOUR_GMAIL_APP_PASSWORD
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+server:
+  port: 8080
